@@ -37,5 +37,36 @@
         </constructor-arg>
     </bean>
 
+    <!-- beans from Monica's project-->
+    <bean id="customerManager" class="org.example.managers.CustomerManager" init-method="postInit" destroy-method="preDestroy">
+        <constructor-arg ref="Customer1"/>
+    </bean>
+
+    <bean id = "Customer1" class = "org.example.models.Customer">
+        <constructor-arg name = "id" value = "1"/>
+        <constructor-arg name ="customerName" value = "Marie Poppins"/>
+        <constructor-arg name = "age" value = "25"/>
+        <constructor-arg name = "country" value = "Sweden"/>
+        <constructor-arg name = "zip" value ="807056"/>
+    </bean>
+
+    <bean id = "Customer2" class = "org.example.models.Customer">
+        <constructor-arg name = "id" value = "2"/>
+        <constructor-arg name ="customerName" value = "Dianne Hopps"/>
+        <constructor-arg name = "age" value = "19"/>
+        <constructor-arg name = "country" value = "Cyprus"/>
+        <constructor-arg name = "zip" value ="000156"/>
+    </bean>
+
+    <bean id="adminManager" class="org.example.managers.AdminManager" init-method="postInit" destroy-method="preDestroy">
+        <constructor-arg ref="Admin1"/>
+    </bean>
+
+    <bean id = "Admin1" class = "org.example.models.Admin">
+        <constructor-arg name = "id" value = "1"/>
+        <constructor-arg name = "username" value = "example1"/>
+        <constructor-arg name = "email" value = "admin@email.com"/>
+        <constructor-arg name = "status" value = "3"/>
+    </bean>
 
 </beans>
