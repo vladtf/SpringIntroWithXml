@@ -25,6 +25,7 @@
         </constructor-arg>
     </bean>
 
+
     <bean id="admin" class="org.example.models.Person">
         <constructor-arg name="id" value="0"/>
         <constructor-arg name="firstName" value="admin"/>
@@ -68,5 +69,27 @@
         <constructor-arg name = "email" value = "admin@email.com"/>
         <constructor-arg name = "status" value = "3"/>
     </bean>
+
+   <!--Bogdan -->
+
+
+    <bean id = "EmployeeId" class="org.example.models.EmployeeModel" >
+
+        <property name="id" value = "1"/>
+        <property name="fullName" value = "Ion Ion"/>
+        <property name="occupation" value="CEO"/>
+        <property name="salary" value ="100000"/>
+        <property name="dateOfEmployment"  >
+            <bean factory-bean="dateFormatBogdan" factory-method="parse">
+                <constructor-arg value="05-05-2005" />
+            </bean>
+        </property>
+    </bean>
+
+
+    <bean id="dateFormatBogdan" class="java.text.SimpleDateFormat">
+        <constructor-arg value="dd-MM-yyyy" />
+    </bean>
+
 
 </beans>
