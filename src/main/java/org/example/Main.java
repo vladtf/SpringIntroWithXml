@@ -3,6 +3,7 @@ package org.example;
 import org.example.managers.AdminManager;
 import org.example.managers.CustomerManager;
 import org.example.managers.PersonManager;
+import org.example.models.EmployeeModel;
 import org.example.models.Person;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -19,6 +20,13 @@ public class Main {
 
             AdminManager AdminManager = context.getBean("adminManager", AdminManager.class);
             System.out.println(AdminManager.getAdmin());
+
+
+            System.out.println("--------------------------------------------------");
+
+
+            EmployeeModel model = context.getBean("EmployeeId", EmployeeModel.class);
+            System.out.println(model);
         }
     }
 }
